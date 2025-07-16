@@ -8,7 +8,7 @@ footer: 'Sora Director Presentation'
 
 ![bg right](https://picsum.photos/800/600)
 
-"From Concept to Cinema in Six Simple Tabs"
+"From Concept to Cinema with a single prompt"
 
 <!-- Speaker notes: Introduction to Sora Director -->
 

@@ -121,9 +121,9 @@ footer: 'Sora Director Presentation'
 
 ## Demo Time
 
-![center](https://localhost:8000/)
+[![center](https://picsum.photos/800/600)](http://localhost:8000)
 
-**Let's see Sora Director in action!**
+**Let's see it in action!**
 
 <!-- Speaker notes: Live demonstration of the platform -->
 

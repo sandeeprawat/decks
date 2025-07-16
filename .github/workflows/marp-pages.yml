@@ -36,12 +36,9 @@ jobs:
       - name: Marp Build (All presentations)
         uses: docker://marpteam/marp-cli:latest
         with:
-          args: --theme-set slides/themes --html -- slides/*.md
+          args: --theme-set slides/themes --html -I slides/ -o build/  
         env:
           MARP_USER: root:root
-          
-      - name: Move generated HTML files to build directory
-        run: mv slides/*.html build/
         
       - name: Setup Pages
         uses: actions/configure-pages@v5

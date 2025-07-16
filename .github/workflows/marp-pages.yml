@@ -33,17 +33,10 @@ jobs:
           cp -R slides/themes build/themes
           cp slides/index.html build/index.html
 
-      - name: Marp Build (Slides.md)
+      - name: Marp Build (All presentations)
         uses: docker://marpteam/marp-cli:latest
         with:
-          args: --theme-set slides/themes -o build/slides.html --html -- slides/Slides.md
-        env:
-          MARP_USER: root:root
-
-      - name: Marp Build (soradirector.md)
-        uses: docker://marpteam/marp-cli:latest
-        with:
-          args: --theme-set slides/themes -o build/soradirector.html --html -- slides/soradirector.md
+          args: --theme-set slides/themes -o build/ --html -- slides/*.md
         env:
           MARP_USER: root:root
       - name: Setup Pages

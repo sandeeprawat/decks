@@ -26,13 +26,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Copy images
-        run: mkdir build && cp -R slides/img build/img && cp -R slides/themes build/themes
+      - name: Copy static assets
+        run: |
+          mkdir build
+          cp -R slides/img build/img
+          cp -R slides/themes build/themes
+          cp slides/index.html build/index.html
 
-      - name: Marp Build (README)
+      - name: Marp Build (Slides.md)
         uses: docker://marpteam/marp-cli:latest
         with:
-          args: --theme-set slides/themes -o build/index.html --html -- slides/Slides.md
+          args: --theme-set slides/themes -o build/slides.html --html -- slides/Slides.md
+        env:
+          MARP_USER: root:root
+
+      - name: Marp Build (soradirector.md)
+        uses: docker://marpteam/marp-cli:latest
+        with:
+          args: --theme-set slides/themes -o build/soradirector.html --html -- slides/soradirector.md
         env:
           MARP_USER: root:root
       - name: Setup Pages

@@ -1,13 +1,47 @@
-# Marp Slides Template
+# Presentation Library
 
 [Use this template!](https://github.com/codebytes/marp-slides-template/generate)
 
-Create a Marp presentation site that can be built and published on [GitHub Pages] using this minimal template. The site features:
+Create multiple Marp presentation sites that can be built and published on [GitHub Pages] using this template. The site features:
 
-- Marp integration
-- A GitHub Pages / Actions workflow for build and publish ([See a preview](http://chris-ayers.com/marp-slides-template/))
+- Multiple Marp presentations in one repository
+- A centralized index page for navigation between presentations
+- GitHub Pages / Actions workflow for build and publish ([See a preview](http://chris-ayers.com/marp-slides-template/))
 - A DevContainer/CodeSpace configuration with Marp and Markdown preview extensions
 - Chrome installation for PDF and PowerPoint slide creation on Linux
+
+## Project Structure
+
+```
+slides/
+├── index.html              # Main landing page with links to all presentations
+├── Slides.md              # Sample presentation (original)
+├── soradirector.md        # Sora Director presentation
+├── img/                   # Shared images folder
+└── themes/                # Custom themes folder
+    ├── custom-default.css
+    ├── custom-gaia.css
+    ├── custom-uncover.css
+    └── custom.css
+```
+
+## Available Presentations
+
+- **Sample Presentation** (`Slides.md`) - A comprehensive sample showcasing various Marp features
+- **Sora Director** (`soradirector.md`) - AI-powered video generation platform presentation
+
+## Adding New Presentations
+
+1. Create a new `.md` file in the `slides/` folder
+2. Include the required frontmatter:
+   ```yaml
+   ---
+   marp: true
+   theme: custom-default
+   ---
+   ```
+3. Update the GitHub Actions workflow in `.github/workflows/marp-pages.yml` to build the new presentation
+4. Add a link to the new presentation in `slides/index.html`
 
 ## Customization
 
@@ -16,7 +50,8 @@ Feel free to customize the sites created with this template as you like!
 ## Getting Started
 
 1. Click "[use this template]" to create a new site.
-2. Update the content of `slides/Slides.md` with your own presentation.
+2. Update the content of existing presentations or create new ones in the `slides/` folder.
+3. Modify `slides/index.html` to reflect your presentation collection.
 
 ## Custom Themes
 
@@ -48,7 +83,8 @@ For additional themes, add them to the devcontainer and follow the [Marp custom 
 
 1. Install [Visual Studio Code](https://code.visualstudio.com/).
 2. Install the [Marp for VS Code extension](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode).
-3. Open `slides/Slides.md` in VS Code.
+3. Open any `.md` file in the `slides/` folder in VS Code.
+4. Use the Marp extension to preview your presentations.
 
 ## Licensing and Attribution
 
